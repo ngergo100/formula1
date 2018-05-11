@@ -28,17 +28,17 @@ addLayers       true;
 // - to 'snap' the mesh boundary to the surface
 geometry
 {
-    motorBike
+    car
     {
         type triSurfaceMesh;
-        file "motorBike.obj";
+        file "car.stl";
     }
 
     refinementBox
     {
         type searchableBox;
-        min (-1.0 -0.7 0.0);
-        max ( 8.0  0.7 2.5);
+        min (-3.0 -0.7 0.0);
+        max ( 5.0  0.7 2.5);
     }
 };
 
@@ -91,7 +91,7 @@ castellatedMeshControls
     features
     (
         {
-            file "motorBike.eMesh";
+            file "car.eMesh";
             level 6;
         }
     );
@@ -109,7 +109,7 @@ castellatedMeshControls
 
     refinementSurfaces
     {
-        motorBike
+        car
         {
             // Surface-wise min and max refinement level
             level (5 6);
@@ -119,7 +119,7 @@ castellatedMeshControls
             patchInfo
             {
                 type wall;
-                inGroups (motorBikeGroup);
+                inGroups (carGroup);
             }
         }
     }
@@ -146,7 +146,7 @@ castellatedMeshControls
         refinementBox
         {
             mode inside;
-            levels ((1E15 4));
+            levels ((1E15 4)); // 
         }
     }
 
@@ -159,7 +159,7 @@ castellatedMeshControls
     // section reachable from the locationInMesh is kept.
     // NOTE: This point should never be on a face, always inside a cell, even
     // after refinement.
-    locationInMesh (3.0001 3.0001 0.43);
+    locationInMesh (10 2 2);
 
 
     // Whether any faceZones (as specified in the refinementSurfaces)
@@ -218,7 +218,7 @@ addLayersControls
     // Per final patch (so not geometry!) the layer information
     layers
     {
-        "(lowerWall|motorBike).*"
+        "(lowerWall|car).*"
         {
             nSurfaceLayers 1;
         }

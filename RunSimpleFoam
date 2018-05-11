@@ -1,0 +1,12 @@
+rm -rf processor[0-9]*
+rm -rf postProcessing
+foamListTimes -rm
+rm -f log.decomposePar
+rm -f log.simpleFoam
+rm -f log.reconstructPar
+rm -rf [1-9]*
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+runApplication decomposePar -copyZero
+runParallel simpleFoam
+runApplication reconstructPar
+

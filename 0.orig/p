@@ -41,7 +41,7 @@ boundaryField
         type            zeroGradient;
     }
 
-    motorBikeGroup
+    carGroup
     {
         type            zeroGradient;
     }

@@ -40,7 +40,7 @@ boundaryField
         value           $internalField;
     }
 
-    motorBikeGroup
+    carGroup
     {
         type            omegaWallFunction;
         value           $internalField;

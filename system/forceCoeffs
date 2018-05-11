@@ -17,16 +17,16 @@ forceCoeffs1
 
     log             yes;
 
-    patches         (motorBikeGroup);
+    patches         (carGroup);
     rho             rhoInf;      // Indicates incompressible
     rhoInf          1;           // Redundant for incompressible
     liftDir         (0 0 1);
     dragDir         (1 0 0);
     CofR            (0.72 0 0);  // Axle midpoint on ground
     pitchAxis       (0 1 0);
-    magUInf         20;
-    lRef            1.42;        // Wheelbase length
-    Aref            0.75;        // Estimated
+    magUInf         90;
+    lRef            5.061;        // Wheelbase length
+    Aref            1.5;          // Estimated
     /*
     binData
     {
